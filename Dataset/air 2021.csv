@@ -1,0 +1,39 @@
+Sr. No.,State / Union Territory,SO2 (Annual Average),NO2 (Annual Average),PM10 (Annual Average),PM2.5 (Annual Average)
+1,"Andhra Pradesh",7.0,17.0,66.0,29.0
+2,"Arunachal Pradesh",3.0,5.0,67,NM
+3,"Assam",6.5,12.0,92.0,42.0
+4,"Bihar",8.0,24.0,160.0,80.0
+5,"Chhattisgarh",9.0,16.0,67.0,29.0
+6,"Goa",5.5,14.0,63.0,28.0
+7,"Gujarat",16.0,22.0,106.0,42.0
+8,"Haryana",10.0,29.0,170.0,75.0
+9,"Himachal Pradesh",2.5,9.0,71.0,30.0
+10,"Jharkhand",15.0,30.0,200.0,90.0
+11,"Karnataka",10.0,18.0,85.0,35.0
+12,"Kerala",7.0,12.0,55.0,25.0
+13,"Madhya Pradesh",12.0,22.0,120.0,55.0
+14,"Maharashtra",13.0,27.0,95.0,43.0
+15,"Manipur",6.0,26.0,123.0,48.0
+16,"Meghalaya",7.0,10.0,65.0,25.0
+17,"Mizoram",2.0,5.0,35.0,20.0
+18,"Nagaland",2.0,11.0,NM,NM
+19,"Odisha",9.0,18.0,100.0,45.0
+20,"Punjab",7.0,17.0,100.0,NM
+21,"Rajasthan",10.0,26.0,135.0,55.0
+22,"Sikkim",6.0,6.0,37.0,16.0
+23,"Tamil Nadu",10.0,19.0,60.0,28.0
+24,"Telangana",13.0,23.0,85.0,40.0
+25,"Tripura",6.0,12.0,60.0,30.0
+26,"Uttarakhand",8.0,20.0,85.0,40.0
+27,"Uttar Pradesh",10.0,30.0,155.0,75.0
+28,"West Bengal",11.0,25.0,120.0,60.0
+29,"Andaman & Nicobar Islands",NM,NM,22,-
+30,"Chandigarh",6,24,98,49
+31,"Dadra & Nagar Haveli",17.0,22.0,76.0,30.0
+32,"Daman & Diu",NM,NM,NM,NM
+33,"Delhi",10,42,207,107
+34,"Jammu & Kashmir",8.0,16.0,120.0,50.0
+35,"Ladakh",NM,NM,NM,NM
+36,"Lakshadweep",NM,NM,NM,NM
+37,"Puducherry",10.0,20.0,70.0,30.0
+
