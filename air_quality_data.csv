@@ -110,6 +110,39 @@ State / Union Territory,Year,Region,SO2 (Annual Average),NO2 (Annual Average),PM
 "Ladakh",2020,"North",-, -, -, -
 "Lakshadweep",2020,"South",-, -, -, -
 "Puducherry",2020,"South",9.5,19.5,68.0,29.0
+State_Union_Territory,Year,Region,SO2 (Annual Average),NO2 (Annual Average),PM10 (Annual Average),PM2.5 (Annual Average)
+Andhra Pradesh,2019,South,5.8,17.7,64.1,27.6
+Arunachal Pradesh,2019,Northeast,3.0,7.0,85.5,NA
+Assam,2019,Northeast,6.4,13.4,75.2,26.7
+Bihar,2019,East,9.4,34.0,141.3,78.0
+Chandigarh,2019,North,2.0,18.6,96.6,63.2
+Chattisgarh,2019,Central,8.6,18.6,67.5,35.2
+Dadra & Nagar Haveli and Daman & Diu,2019,West,20.0,21.8,91.2,33.0
+Delhi,2019,North,4.3,71.6,201.1,104.8
+Goa,2019,West,8.7,13.4,68.4,33.2
+Gujarat,2019,West,20.5,25.6,129.6,37.1
+Himachal Pradesh,2019,North,2.4,13.1,74.8,27.1
+Jammu & Kashmir,2019,North,3.0,17.0,138.3,37.7
+Jharkhand,2019,East,23.2,37.6,176.7,NA
+Karnataka,2019,South,6.1,16.1,66.6,29.6
+Kerala,2019,South,3.9,10.7,45.1,23.0
+Madhya Pradesh,2019,Central,12.7,19.3,122.1,44.0
+Maharashtra,2019,West,16.0,39.1,95.6,39.5
+Manipur,2019,Northeast,9.0,21.0,109.0,54.0
+Meghalaya,2019,Northeast,6.6,13.1,54.3,7.0
+Mizoram,2019,Northeast,2.0,6.6,34.1,NA
+Nagaland,2019,Northeast,2.0,7.6,83.0,NA
+Odisha,2019,East,9.2,17.0,109.6,40.9
+Puducherry,2019,South,3.8,9.5,42.8,NA
+Punjab,2019,North,7.8,18.5,123.9,NA
+Rajasthan,2019,North,10.6,29.5,186.8,NA
+Sikkim,2019,Northeast,5.8,6.3,39.9,NA
+Tamilnadu,2019,South,10.2,18.4,69.3,37.8
+Telangana,2019,South,6.9,41.0,100.2,43.7
+Tripura,2019,Northeast,4.0,10.5,76.5,42.5
+Uttar Pradesh,2019,North,14.7,36.8,213.3,103.3
+Uttarakhand,2019,North,17.0,26.3,145.4,NA
+West Bengal,2019,East,9.5,36.9,134.9,53.8
 "State/UT","Year","SO2 (µg/m³)","NO2 (µg/m³)","PM10 (µg/m³)","PM2.5 (µg/m³)"
 "Andhra Pradesh","2018","6.2","19.0","73.9","37.8"
 "Arunachal Pradesh","2018","3.0","9.0","100.0",""
