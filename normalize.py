@@ -1,115 +1,98 @@
 import pandas as pd
-import numpy as np
+import re
 
-# Load your datasets
-df_national = pd.read_csv('new_aqi/1970-2021 data.csv')
-df_state_accidents = pd.read_csv('new_aqi/2018-2022 data.csv')
-df_locations = pd.read_csv('new_aqi/statewise_loactions.csv')
-
-# Create a standardization mapping dictionary
-state_mapping = {
-    # For & vs and
-    'Andaman & Nicobar Islands': 'Andaman and Nicobar Islands',
-    'Dadra & Nagar Haveli': 'Dadra and Nagar Haveli and Daman and Diu',
-    'Daman & Diu': 'Dadra and Nagar Haveli and Daman and Diu',
-    'Jammu & Kashmir': 'Jammu and Kashmir',
-    
-    # For hyphenated vs space
-    'Tamil-Nadu': 'Tamil Nadu',
-    'Andhra-Pradesh': 'Andhra Pradesh',
-    
-    # For old vs new names
-    'Orissa': 'Odisha',
-    'Pondicherry': 'Puducherry',
-    
-    # For variations in spacing or capitalization
-    'TAMIL NADU': 'Tamil Nadu',
-    'Tamilnadu': 'Tamil Nadu',
-    'DELHI': 'Delhi',
-    'delhi': 'Delhi'
-}
-
-def standardize_state_names(df, column_name):
+def standardize_state_names(df, state_column):
     """
-    Standardize state/UT names in a dataframe
+    Standardizes state names in a DataFrame.
     
     Parameters:
-    df (pandas.DataFrame): The dataframe containing state names
-    column_name (str): Name of the column containing state names
+    - df: DataFrame containing state names
+    - state_column: Name of column containing state names
     
     Returns:
-    pandas.DataFrame: Dataframe with standardized state names
+    - DataFrame with standardized state names
     """
-    # Create a copy to avoid modifying the original dataframe
+    if state_column not in df.columns:
+        print(f"Column '{state_column}' not found in DataFrame.")
+        return df
+    
+    # Create a copy to avoid modifying the original
     df_copy = df.copy()
     
-    # Apply the mapping
-    df_copy[column_name] = df_copy[column_name].map(lambda x: state_mapping.get(x, x))
+    # Common state name variations and their standardized forms
+    state_mapping = {
+        # Ampersand vs. 'and'
+        r'(\w+)\s*&\s*(\w+)': r'\1 and \2',
+        
+        # Handle hyphenated names
+        r'Tamil-Nadu': 'Tamil Nadu',
+        r'Andhra-Pradesh': 'Andhra Pradesh',
+        r'Arunachal-Pradesh': 'Arunachal Pradesh',
+        r'Himachal-Pradesh': 'Himachal Pradesh',
+        r'Madhya-Pradesh': 'Madhya Pradesh',
+        r'Uttar-Pradesh': 'Uttar Pradesh',
+        r'West-Bengal': 'West Bengal',
+        
+        # Various spellings and formats
+        r'Orissa': 'Odisha',
+        r'Pondicherry': 'Puducherry',
+        r'Delhi( UT)?': 'Delhi',
+        r'Jammu & Kashmir': 'Jammu and Kashmir',
+        r'Uttaranchal': 'Uttarakhand',
+        r'Chattisgarh': 'Chhattisgarh',
+        r'Jharkhand': 'Jharkhand',
+        r'D & N Haveli': 'Dadra and Nagar Haveli',
+        r'Dadra & Nagar Haveli': 'Dadra and Nagar Haveli',
+        r'Daman & Diu': 'Daman and Diu',
+
+        # Combined UT after 2020
+        r'Dadra and Nagar Haveli and Daman and Diu': 'Dadra and Nagar Haveli and Daman and Diu',
+        
+        # Additional mappings for other potential variations
+        r'A & N Islands': 'Andaman and Nicobar Islands',
+        r'Andaman & Nicobar': 'Andaman and Nicobar Islands',
+        r'Andaman & Nicobar Islands': 'Andaman and Nicobar Islands'
+    }
     
-    # Strip any leading/trailing whitespace
-    df_copy[column_name] = df_copy[column_name].str.strip()
+    # Apply all replacements
+    for pattern, replacement in state_mapping.items():
+        df_copy[state_column] = df_copy[state_column].str.replace(pattern, replacement, regex=True)
+    
+    # Strip whitespace
+    df_copy[state_column] = df_copy[state_column].str.strip()
     
     return df_copy
 
-# Apply standardization to the datasets
-df_state_accidents = standardize_state_names(df_state_accidents, 'State/UT')
-df_locations = standardize_state_names(df_locations, 'State/UT')
-
-# Handle the duplicate entry for Dadra and Nagar Haveli and Daman and Diu
-# Keep only the first occurrence and sum the values
-if len(df_state_accidents[df_state_accidents['State/UT'] == 'Dadra and Nagar Haveli and Daman and Diu']) > 1:
-    # Get indices of duplicate rows
-    duplicate_indices = df_state_accidents[df_state_accidents['State/UT'] == 
-                                        'Dadra and Nagar Haveli and Daman and Diu'].index.tolist()
-    
-    if len(duplicate_indices) > 1:
-        # Keep the first instance and aggregate numeric values
-        first_idx = duplicate_indices[0]
-        for col in df_state_accidents.columns:
-            if col != 'S.No' and col != 'State/UT' and pd.api.types.is_numeric_dtype(df_state_accidents[col]):
-                # Sum the values from duplicates
-                df_state_accidents.at[first_idx, col] = df_state_accidents.loc[duplicate_indices, col].sum()
+def main():
+    # Load datasets
+    try:
+        # This dataset doesn't have state-level data but included for completeness
+        national_data = pd.read_csv('new_aqi/1970-2021 data.csv')
         
-        # Drop the subsequent duplicates
-        df_state_accidents = df_state_accidents.drop(duplicate_indices[1:])
-        # Reset the index
-        df_state_accidents = df_state_accidents.reset_index(drop=True)
+        # State-level accident data
+        accident_data = pd.read_csv('new_aqi/2018-2022 data.csv')
+        
+        # Assuming you have an air quality dataset with state names
+        # air_quality = pd.read_csv('path_to_air_quality.csv')
+        
+        # Standardize state names in accident data
+        standardized_accident = standardize_state_names(accident_data, 'State/UT')
+        
+        # Standardize state names in air quality data (uncomment when available)
+        # standardized_air_quality = standardize_state_names(air_quality, 'State / Union Territory')
+        
+        # Save standardized datasets
+        standardized_accident.to_csv('new_aqi/standardized_accident_data.csv', index=False)
+        # standardized_air_quality.to_csv('new_aqi/standardized_air_quality.csv', index=False)
+        
+        print("Standardization complete. Files saved with prefix 'standardized_'")
+        
+        # Print sample of standardized states for verification
+        print("\nSample of standardized state names:")
+        print(standardized_accident['State/UT'].head(10))
+        
+    except Exception as e:
+        print(f"Error: {e}")
 
-# Fix the missing Mizoram in locations dataset
-if 'Mizoram' not in df_locations['State/UT'].values:
-    # Adding Mizoram with approximate coordinates
-    mizoram_row = pd.DataFrame({
-        'State/UT': ['Mizoram'],
-        'latitude': [23.1645],
-        'longitude': [92.9376]
-    })
-    df_locations = pd.concat([df_locations, mizoram_row], ignore_index=True)
-
-# Fix for Ladakh if missing in locations
-if 'Ladakh' not in df_locations['State/UT'].values and 'Ladakh' in df_state_accidents['State/UT'].values:
-    ladakh_row = pd.DataFrame({
-        'State/UT': ['Ladakh'],
-        'latitude': [34.1526],
-        'longitude': [77.5770]
-    })
-    df_locations = pd.concat([df_locations, ladakh_row], ignore_index=True)
-
-# Save the standardized datasets
-df_state_accidents.to_csv('new_aqi/standardized_accident_data.csv', index=False)
-df_locations.to_csv('new_aqi/standardized_locations.csv', index=False)
-
-# Verify standardization by checking for mismatches between datasets
-accident_states = set(df_state_accidents['State/UT'].unique())
-location_states = set(df_locations['State/UT'].unique())
-
-# Find states in accident data but not in location data
-missing_in_locations = accident_states - location_states
-if missing_in_locations:
-    print("States in accident data but missing in location data:", missing_in_locations)
-
-# Find states in location data but not in accident data
-missing_in_accidents = location_states - accident_states
-if missing_in_accidents:
-    print("States in location data but missing in accident data:", missing_in_accidents)
-
-print("Standardization complete!")
+if __name__ == "__main__":
+    main()
