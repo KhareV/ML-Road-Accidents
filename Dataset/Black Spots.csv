@@ -1,0 +1,281 @@
+﻿S.no,State,Name of District (Traffic unit),Name of Jurisdictional Police Station,NH/SH/M,Name of Location Place,Starting,Ending to,Number of Accidents 2016,Number of Accidents 2017,Number of Accidents 2018,Number of Accidents Total of all 3 years,Number of Fatalities 2016,Number of Fatalities 2017,Number of Fatalities 2018,Number of Fatalities Total of all 3 years
+1,Tripura,West,Amtali PS,NH,Siddhi Ashram,1 Mtr.,400 Mtrs.,7,4,3,14,3,3,1,7
+2,Tripura,SPJ,Bisramganj,NH,Chesrimai To Puskar Bari,0,1/2 Km,7,3,4,14,5,1,0,6
+3,Tripura,West,Ranirbazar PS,NH,Bridhinagar,1 Mtr.,425 Mtrs.,6,2,4,12,2,2,1,5
+4,Tripura,Gomati,R.K. Pur PS,NH,Chanban To Rajarbag Motor Stand,0,500 Mtrs.,3,4,2,9,0,2,3,5
+5,Tripura,Dhalal,Manu PS,NH,S.K. Para Area,378.00 Km,378.00 Km,1,2,0,3,1,3,0,4
+6,Tripura,West,Amtali PS,NH,Sekher Kote,1 Mtr.,450 Mtrs.,3,5,6,14,1,2,1,4
+7,Tripura,West,Amtali PS,NH,Surjyamoni Nagar,1 Mtr.,350 Mtrs.,5,3,6,14,1,0,3,4
+8,Tripura,Gomati,R.K. Pur PS,NH,Peratia To Natintilla,0,500 Mtrs.,2,3,3,8,1,2,1,4
+9,Tripura,North,Churaibari,NH,Sanicherra,6 Km,5 Km,0,0,3,3,0,0,2,2
+10,Tripura,Unakoti,Kumarghat-Pecharthal,NH,Sidhangcherra,12 Km,0.5 Km,2,3,0,5,0,2,0,2
+11,Kerala,Kollam Rural,Kundara,NH 744,Keralapuram,9.75,10.25,16,17,3,36,9,9,10,28
+12,Kerala,Alappuzha,Aroor,NH 66,Aroor Bypass To Aroor Temple,0.250 north,0.250 south,71,34,59,164,9,6,11,26
+13,Kerala,Alappuzha,Haripad,NH 66,Karuvatta- Vazhiyambalam,0.350 south,0.150 north,17,42,16,75,6,9,4,19
+14,Kerala,Alappuzha,Aroor,NH 66,Eramalloor,0.250 north,0.250 south,36,42,38,116,9,6,3,18
+15,Kerala,Alappuzha,Aroor,NH 66,Chandiroor,0.150 north,0.350 south,27,31,30,88,5,7,5,17
+16,Kerala,Alappuzha,Haripad,NH 66,Madhava Junction- Haripad- KSRTC JN,0.350 south,0.150 north,16,20,35,71,3,3,9,15
+17,Kerala,Alappuzha,Kareelakulangara,NH 66,Ramapuram,0.250 north,0.250 south,13,13,17,43,5,2,6,13
+18,Kerala,Kannur,Valapattanam,NH,Pappinisseri Chungam To Velapuram,00 Mtr,500 Mtr,10,8,10,28,6,3,4,13
+19,Kerala,Alappuzha,Kuthiathode,NH 66,"Thuravoor St George Church To Reliance Petrol Pump",0.250 north,.250 south,36,26,24,86,3,6,3,12
+20,Kerala,Kozhikode Rural,Vatakara,NH,Kainatty,Kainatty,KT Bazar,10,12,9,31,3,4,5,12
+21,Telangana,Suryapet,Kodad Town,NH 65,SRM School,177,177/4,3,0,1,4,5,0,18,23
+22,Telangana,Sangareddy,Sadasivpet,NH 65,Nandikandi Outskirts,76.5,76,17,7,7,31,15,1,6,22
+23,Telangana,Sangareddy,Kondapur,NH 65,Malkapur X Road,56.5,56,13,15,7,35,7,10,5,22
+24,Telangana,Sangareddy,Patancheru,NH 65,Muthangi (V) Limits,33.5,33,9,14,7,30,8,5,7,20
+25,Telangana,Rachakonda,Ghatkesar PS,NH 163,Aushapur Village,29 Kms,29.5 Kms,17,9,12,38,7,5,7,19
+26,Telangana,Sangareddy,Patancheru,NH 65,Isnapur X Road,35.5,35,12,10,13,35,9,3,5,17
+27,Telangana,Suryapet,Kodad Town,NH 65,Mellachervu Fly Over,181,181/4,6,1,2,9,14,1,2,17
+28,Telangana,Cyberabad,Narsingi,NH 163,Tippukhan Bridge To Hydershakote,6.5 Kms,7 Kms,11,17,11,39,9,6,2,17
+29,Telangana,Warangal,Mamnoor,NH 563,Nayudu Petrol Pump Cross,127,127.5,16,10,9,35,9,5,3,17
+30,Telangana,Kamareddy,Devanpally,NH 44,Tekriyal /'X' Road,117.5,117,10,4,3,17,8,5,3,16
+31,Maharashtra,Dhule,Dhule Taluka,NH-6,Katsar Village,508/8,509/3,2,2,2,6,19,19,19,57
+32,Maharashtra,Nanded,Nanded Rural,NH- 361,Muslmanwadi Pati,15 Km,15.5 Km,1,2,2,5,1,7,5,13
+33,Maharashtra,Amravati Rural,Loni,NH-6,Nagzari Fata,177/950,177/950,1,4,3,8,1,5,4,10
+34,Maharashtra,Solapur Rural,Tembhurni,NH-65,Kanergaon Pati Solapur To Pune,162/350,162/850,6,3,0,9,6,3,0,9
+35,Maharashtra,Dhule,Dhule Taluka,NH-3,Near Purmepada Village,282/0,282/5,7,7,7,21,6,6,6,18
+36,Maharashtra,Bhandara,Jawahar Nagar,NH-53,Shahapur,500/600,500/600,2,5,4,11,1,2,2,5
+37,Maharashtra,Satara,Bhuinj,NH-4,Near Anewadi Valsure Pul,748,748,0,2,4,6,0,2,3,5
+38,Maharashtra,Amaravati City,GadgeNagar,NH - 6,Gori In Hotel "T" Point,0,0,2,2,1,5,2,2,1,5
+39,Maharashtra,Dhule,Nardana,NH-3,Gori In Hotel "T" Point,216/2,216/5,1,5,9,15,1,4,7,12
+40,Maharashtra,Sangli,Miraj City,NH-166,Near D Mart Pandharpur Road Miraj,196/1,196/6,1,4,7,12,1,4,7,12
+41,Jammu and Kashmir,Ramban,Ramban,NHW-1A,Kelamorh,159,159.5,1,3,2,6,1,9,26,36
+42,Jammu and Kashmir,Ramban,Ramsoo,NHW-1A,Nachlana,173,173.5,1,4,3,10,2,19,4,28
+43,Jammu and Kashmir,Samba,Bari Brahmana,NHW-44,Railway Crossing,13.5,14,5,6,6,23,6,4,5,19
+44,Jammu and Kashmir,Ramban,Banihal,NHW-1A,Chamalwas,179,179.5,3,1,1,8,11,2,1,18
+45,Jammu and Kashmir,Kathua,Kathua,NH,Barnoti Morh,8 Km,8 ½ Km,19,18,15,70,4,5,3,16
+46,Jammu and Kashmir,Kathua,Rajbagh,NH,Rajbagh,500 Mtrs,01 Km,15,10,17,75,3,0,6,14
+47,Jammu and Kashmir,Ramban,Banihal,NHW-1A,Shatani Nallah,202,202.5,1,2,0,4,2,5,0,14
+48,Jammu and Kashmir,Kathua,Lakhanpur,NH,Lakhanpur To Golden Gate,500 Mtrs,1 Km,8,7,10,33,1,4,2,12
+49,Jammu and Kashmir,Ramban,Banihal,NHW-1A,Shabanbass,180,180.5,3,0,1,6,8,0,1,11
+50,Jammu and Kashmir,Samba,Samba,NHW-44,Bus Stand Chowk,1,1.5,16,7,5,28,7,2,1,10
+51,Jharkhand,Deoghar,Jasidih,NH-333,Near Digariya Pahar,147.5,148,0,4,1,5,0,2,0,2
+52,Jharkhand,Deoghar,Jasidih,NH-333,"Deoghar Jasidih Road, Near Railway Over Bridge",156.8,157.3,1,2,2,5,1,1,1,3
+53,Jharkhand,Deoghar,Mohanpur,NH-114A,"Hindolwaran,Deoghar Dumka Road",121.65,122.15,3,2,2,7,2,2,0,4
+54,Jharkhand,Dumka,Dumka town,NH114A,Pusaro Bridge,66.5,67,0,1,5,6,0,1,3,4
+55,Jharkhand,Dumka,Jama,NH114A,Asanthar,82,82.5,1,2,2,5,0,2,0,2
+56,Jharkhand,Dumka,Jarmundi,NH114A,Basukinath Bus Stand,87,87.5,1,0,5,6,1,0,4,5
+57,Jharkhand,Dumka,Jarmundi,NH114A,Jarmundi Bajrangbali More,92,92.5,6,1,1,8,5,0,0,5
+58,Jharkhand,Dumka,Mufassil,NH114A,Dasoraidih,55.2,55.7,0,4,3,7,0,3,2,5
+59,Jharkhand,Dumka,Saraiyahat,NH114A,Chihuntiya,104.5,105,0,3,2,5,0,3,3,6
+60,Jharkhand,Dumka,Shikaripara,NH114A,"Patabari, Barmasia",48,48.5,9,2,2,13,5,0,2,7
+61,Karnataka,Ramanagar District,Kaggalipura PS,NH 209,Agara Cross,7.5 Km,8 Km,9,24,35,68,13,14,10,37
+62,Karnataka,Bagalkot District,BGK RL PS,NH 50,Devalapur Cross,0,500 (Mtrs),4,2,7,13,13,14,8,35
+63,Karnataka,Ramanagar District,Traffic Station,NH-275,Mayaganahalli,8Km,8.5Km,8,9,13,30,13,14,3,30
+64,Karnataka,Raichur District,Raichur Rural,NH,Base Pawer To M.P.C.L,0,500m,7,5,6,18,12,9,8,29
+65,Karnataka,Chitradurga District,"Hiriyur Rural Police Station",NH-4,J.G.Halli,17.5 Km,18 Km,9,12,6,27,7,12,9,28
+66,Karnataka,Mandya,Mandya Traffic,NH-275,In Front Of East Ps Cross,263.1,263.3,8,11,9,28,4,11,12,27
+67,Karnataka,Raichur District,Maski,NH,Lingasagur- Maski Road Santekellur Near,0,500m,1,4,6,11,1,12,23,36
+68,Karnataka,Bengaluru City,"Electronic city Trffic Police Station",National,"Hosuru Main Road ( Hulimavu Tr Ps To Singasandra Bus Stop To Singasandra Bus Stop )",9.3 Km,9.7 Km,6,15,25,46,4,4,15,23
+69,Karnataka,Ramanagar District,Kaggalipura,NH 209,Lakshmipura Temple,6 Km,6.5 Km,6,12,23,41,10,5,8,23
+70,Karnataka,Bangalore District,Hebbagodi,NH-07,Hebbagodi Bus Stop,0.00 Km,100 M,8,9,6,23,8,9,6,23
+71,Andhra Pradesh,EG,Ravulapalem PS,NH -16,"Govt J.R.Collage center, RTC Ingate",Colcutta 1036,Colcutta,16,9,13,38,19,14,17,50
+72,Andhra Pradesh,EG,Ravulapalem PS,NH -16,Ethakota Center,Colcutta 1042,Colcutta,13,14,11,38,15,16,16,47
+73,Andhra Pradesh,EG,Ravulapalem PS,NH -16,Gopalapuam Center,Colcutta 1047,Colcutta,12,10,14,36,13,13,18,44
+74,Andhra Pradesh,WG Dist,Palakol Rural,NH,Penkullapadu To Digamarru Bypass Center,500,500,12,13,5,30,15,16,6,37
+75,Andhra Pradesh,EG,Coringa PS,NH-216,Gurajanapalli,Chollangi,N.S.N Reddy,5,8,5,18,9,13,9,31
+76,Andhra Pradesh,Guntur Urban,Nallapadu PS,NH-16,Y-Junction,to wards Y-Junction 0,to wards Y-Junction 300,10,18,36,64,4,8,17,29
+77,Andhra Pradesh,Nellore,Sullurupeta PS,NH-16,Kotapoluru Cross Road,82+400,82+900,2,3,2,7,2,22,5,29
+78,Andhra Pradesh,WG Dist,Palakol Rural,NH,Lankalakoderu Center To S-Turning.,500,500,9,6,4,19,13,10,6,29
+79,Andhra Pradesh,Visakhapatnam District,Anakapalli (R),NH,KNR Peta,1,1.5,24,21,18,63,18,9,0,27
+80,Andhra Pradesh,EG,Annavaram PS,NH-16,"Kathipudi HP Petrol Bunk to Fly over Bridge",200 Mtrs,800 Mtrs stone,9,14,9,32,3,14,9,26
+81,Arunachal Pradesh,East Siang Distt.,Pasighat,NH -515,Sawmill Area,Sawmill area,100 Mtrs.,15,31,26,72,7,8,11,26
+82,Arunachal Pradesh,Papum Pare,Itanagar PS,NH 415,Mithun Gate/O Point,Mithun gate/o,0.5 Km,2,2,1,5,0,0,1,1
+83,Arunachal Pradesh,Upper Subansiri Distt.,Daporijo PS,NH 52,Post Office Daporijo,Post office,GREF camp,1,4,7,12,0,1,2,3
+84,Arunachal Pradesh,Papum Pare,Itanagar PS,NH 415,Bank Tinali,Bank Tinali,0.5 Km,3,1,3,7,0,0,0,0
+85,Arunachal Pradesh,Papum Pare (Capital),Itanagar PS,NH 415,"Ganga, Near RKM Hospital","Ganga, Near",0.5 Km,2,3,0,5,0,0,0,0
+86,Chandigarh,Chandigarh,Sector-31,NH-5,"Airport L/Point to CRPF Campus Hallo Majra",7.54,7.04,2,5,5,12,2,6,4,12
+87,Chandigarh,Chandigarh,Sector-31,NH-5,Poultry farm Chowk to BSNL Turn,5.03,4.53,4,4,4,12,4,4,3,11
+88,Chandigarh,Chandigarh,Sector-31,NH-5,Tribune Chowk,4.1,4.6,3,0,3,6,3,0,3,6
+89,Chandigarh,Chandigarh,Sector-31,NH-5,Hallomajra L/Point,5.12,5.62,4,1,1,6,3,1,1,5
+90,Chandigarh,Chandigarh,Sector-36,NH-5,In front of ISBT- Sec.43,2,2,3,2,1,6,2,2,1,5
+91,Chandigarh,Chandigarh,Sector-39,NH-5,Badheri Chowk,4.2,4.7,3,1,2,6,1,1,2,4
+92,Chhattisgarh,Balrampur,Balrampur,NH 343,Daldhova,73.8,74.3,1,1,0,2,18,1,0,19
+93,Chhattisgarh,Raipur,Amanaka,NH 53,Tatibandh Chowk To Sarona Overbridge,9.8,10.3,5,4,2,11,5,4,8,17
+94,Chhattisgarh,Sarguja,Ambikapur,NH 130,Mendrakalra,210.6,211.1,4,5,5,14,4,5,4,13
+95,Chhattisgarh,Raipur,Rajendra,NH 53,Pachpedinaka,0.8,0.9,5,5,2,12,5,5,2,12
+96,Chhattisgarh,Mahasamund,Sankara,NH-53,Sankara,156.02,156.08,2,6,1,9,3,8,1,12
+97,Chhattisgarh,Rajnandgaon,Lalbag,NH 53,Pendri,346,346.4,4,7,3,14,2,7,3,12
+98,Chhattisgarh,Bilaspur,Ratanpur,NH 111,Khandoba Sanjhipara Bypass,21,21.5,2,8,3,13,7,3,2,12
+99,Chhattisgarh,Bilaspur,Sirgitti,NH 130,Tifara Overbridge,5,5.5,9,0,4,13,5,4,2,11
+100,Chhattisgarh,Sarguja,Ambikapur,NH 130,Sandbar,218,218.5,6,4,3,13,5,4,2,11
+101,Chhattisgarh,Durg,Old Bhilai,NH-53,Charoda,302.5,303,4,3,2,9,5,3,2,10
+102,Goa,North Goa,Old Goa,NH 748,"Malik Petrol Pump, Corlim (500 Mtrs)",Railway,"Cross Mollar,",3,3,1,7,3,7,1,11
+103,Goa,North Goa,Agacaim,NH 66,Agacaim Bypass Road (500 Mtrs),Toll Naka,Edward Bar &,7,0,1,8,8,0,1,9
+104,Goa,North Goa,Porvorim,NH 66,"Damian De Goa To Tisk Porvorim (500 Mtrs)",Damian De,Tisk Porvorim,3,6,1,10,3,5,1,9
+105,Goa,South Goa,Collem,NH 66,Anmod Ghat (12 Km),Nandran,Goa Border (6,4,7,1,12,3,4,2,9
+106,Goa,North Goa,Porvorim,NH 66,Old Porvorim Bazar (500 Mtrs),Damiandi,Tisk Porvorim,3,6,9,18,3,5,7,15
+107,Goa,North Goa,Pernem,NH 66,Naibag Slope (500 Mtrs),Panjabi,Naibag,1,5,9,15,1,6,11,18
+108,Goa,North Goa,Porvorim,NH 66,"Holy Family Church To Wadakadem (500 Mtrs)",Holy Family,Wadakadem,3,3,2,8,3,2,1,6
+109,Goa,North Goa,Pernem,NH 66,Chopdem Junction (500 Mtrs),Near,Agarwada,1,4,2,7,1,2,3,6
+110,Goa,South Goa,Ponda,NH 748,Cone Farmagudi (500 Mtrs),Cone Priol,Farmagudi out,2,3,7,12,1,1,4,6
+111,Goa,South Goa,Vasco,NH 566,Dabolim (1Km),Dabolim,Air Port,3,4,5,12,1,2,3,6
+112,Gujarat,Surat Rural,kosamba,N.H-48,Pipodara,235,235.5,19,18,29,66,15,13,17,45
+113,Gujarat,"Vadodara Rural",Varnama,NH,"Por Itola Chokdi",12,12.5,10,5,15,30,12,5,24,41
+114,Gujarat,Vadodara Rural,Karjan,NH 48,"Near Sansrod Chokdi",21,21.5,5,7,14,26,8,12,18,38
+115,Gujarat,Vadodara Rural,Karjan,NH 48,"Near Kandari Chokdi",6,6.5,5,11,9,25,8,14,15,37
+116,Gujarat,Vadodara City,Makarpura,8,"Sundarpura Patiya To Ah' Bad Km. Jambuva Bridgi",131.5,132,12,12,12,36,7,15,8,30
+117,Gujarat,"Vadodara Rural",Varnama,NH,"Varsada Chokdi",4.5,5,5,6,7,18,12,8,10,30
+118,Gujarat,Gir Somnath,Una,NH-51,"Nathej Village Near",4,4.5,4,4,0,8,22,8,0,30
+119,Gujarat,Gir Somnath,Una,NH-51,"Naliya Mandvi Nagina Dhora Pase",10,10.5,4,4,4,12,22,8,0,30
+120,Gujarat,Surat Rural,kosamba,N.H-48,Nandavpatiya,224,224.5,14,17,20,51,11,7,11,29
+121,Gujarat,Vadodara Rural,Karjan,NH 48,Near Bamangam,11.5,12,5,6,7,18,8,11,9,28
+122,Haryana,Sonipat,Murthal,44,Kamaspur Chowk,46.1,46.6,9,9,14,32,10,16,13,39
+123,Haryana,Sonipat,Rai,44,Balgarh Chowk,41.9,42.4,14,10,10,34,11,16,11,38
+124,Haryana,Ambala,Parao,44,Near Vill. Mohra,191.4,191.85,10,10,11,31,10,8,10,28
+125,Haryana,Ambala,Parao,44,Shastri Cut,197.97,198.47,4,4,9,17,4,8,8,20
+126,Haryana,Sonipat,Kundli,44,Pau Maniyari Cut,31.73,32.2,8,4,4,16,10,4,4,18
+127,Haryana,Sonipat,Rai,44,Rai Cut,38.82,39.22,5,6,7,18,7,6,5,18
+128,Haryana,Sonipat,Rai,44,Biswan Meel,37.36,37.9,5,5,6,16,6,5,6,17
+129,Haryana,Fatehabad,Sadar,9,Dariyapur,227.2,227.22,6,4,5,15,4,4,8,16
+130,Haryana,Panipat,Chandni Bag,44,Siwah Cut,84,84.5,4,6,14,24,3,5,5,13
+131,Haryana,Faridabad,Sec-37,44,NHPC Metro Station,21.7,22.2,1,3,6,10,1,4,5,10
+132,Himachal Pradesh,Mandi,"BSL Colony Sundernagar",NH 21,Tail Control,Humsafar,Tail Control,4,2,3,9,9,4,11,24
+133,Himachal Pradesh,Mandi,"BSL Colony Sundernagar",NH 21,Naresh Chowk,Tail Control,Naresh Chowk,1,7,3,11,1,12,4,17
+134,Himachal Pradesh,Shimla,Theog,NH-5,Near Dogra Mod Sandhu,178.3,178.5,5,6,4,15,4,3,7,14
+135,Himachal Pradesh,Shimla,Kumarsain,NH-5,Singhapur,252.9,253.26,2,4,1,7,3,6,2,11
+136,Himachal Pradesh,Shimla,New Shimla,NH-5,"Mist Chamber Crossing To Khalini Bifurcation",146.2,146.7,2,2,3,7,6,2,3,11
+137,Himachal Pradesh,Baddi,Baddi,NH/105,Kishanpura,24/600,25/100,10,5,0,15,7,3,0,10
+138,Himachal Pradesh,Shimla,Kumarsain,NH-5,Reddi Khad,208.5,209,2,4,1,7,3,6,1,10
+139,Himachal Pradesh,Kangra,Shahpur,NH 154,Sarnu Near Water Kuhal,63/735,63/885,2,4,2,8,2,5,2,9
+140,Himachal Pradesh,Kangra,Indora,NH 44,Mohtali Ramp,104/740,104/760,2,3,3,8,3,3,3,9
+141,Himachal Pradesh,Baddi,Baddi,NH/105,Bhud,22/400,22/900,9,11,13,33,3,6,9,18
+142,Manipur,Thoubal,Thoubal PS,NH 102,Thoubal Haokha Area,Haokha area,Keyam Sephai,3,9,15,27,1,2,3,6
+143,Manipur,Kakching,Kakching,NH 102,Kakching Khunuta Ching,"3Kms,",3 Kms &,2,2,2,6,0,1,1,2
+144,Manipur,Thoubal,Thoubal PS,NH 102,"Heirok Lamkhai, Wangjing",Wangjing,Uningkhong,6,1,3,10,1,0,0,1
+145,Manipur,Kakching,Kakching,NH 102,Heitroipokpi Near Power House,4 Kms & 500,"5 Kms,",4,2,3,9,0,0,1,1
+146,Manipur,Kakching,Kakching,NH 102,Kakching Lamkhai,2 Kms & 500,"3Kms,",4,1,2,7,0,0,0,0
+147,Meghalaya,Jowai Traffic Branch,Jowai,,Wah Gate Chahtngit Jowai,0 Km,0.5 Km,0,9,2,11,0,2,0,2
+148,Meghalaya,East Jaintia Hills,Khliehrait PS,NH,Byndihati,6 Km,6 Km,7,7,7,21,1,1,1,3
+149,Meghalaya,Jowai Traffic Branch,Jowai,,Mooralong NH44,0 Km,0.5 Km,5,4,5,14,0,0,0,0
+150,Mizoram,Aizawl,Vaivakawn,NH,Rangvamual,2,7,3,3,4,10,4,3,5,12
+151,Mizoram,Aizawl,Kulikawn,NH,World Bank Road,2,7,1,2,2,5,1,2,2,5
+152,Mizoram,Kolasib,Kolasib,NH-306,Khuangpuilam,1,2,0,2,1,3,0,2,1,3
+153,Mizoram,Kolasib,Kolasib,NH-306,Khamrang,1,4,2,0,0,2,2,0,0,2
+154,Mizoram,Serchhip,Serchhip,NH,Ralkiauva Kham,1,9,0,1,1,2,0,1,1,2
+155,Madhya Pradesh,Shivpuri,Amola,NH 27,Naya Amola Sirsos Chouraha,02-May,3-0,6,11,7,24,6,8,9,23
+156,Madhya Pradesh,Khargon,Maheswar,NH 3,"Ganpati Ghat Ganesh Mandir Ke Pas A B Road Bakaner",50-1,50-21,4,5,8,17,3,13,7,23
+157,Madhya Pradesh,Devash,O Chetra Devash,NH 3,Rasoolpur Chouraha,1-0,01-May,158,158,158,474,22,22,22,66
+158,Madhya Pradesh,Sagar,Cant,NH 26,For Line Gadpahra Tiraha,2-0,02-May,8,14,5,27,4,8,9,21
+159,Madhya Pradesh,Dhar,Sector 1,NH 3,Ab Road Bhodiya Talab Ke Samne Tiraha,22-0,22-Feb,6,4,13,23,7,3,9,19
+160,Madhya Pradesh,Mandsore,Pipaliya Mandi,NH 79,Pipliya Mandi Choupati Highway Road,14-May,15,7,6,9,22,7,5,7,19
+161,Madhya Pradesh,Shivpuri,Amola,NH 27,Amola Krasher,10,10-May,3,4,6,13,7,5,5,17
+162,Madhya Pradesh,Dhar,Dhamnod,NH 3,Ganesh Ghat,8,12,82,82,82,246,17,17,17,51
+163,Madhya Pradesh,Nimach,Jawad,NH 79,Kanka Fanta Highway,03-Jan,03-Feb,2,3,18,23,2,11,3,16
+164,Madhya Pradesh,Bhind,Dehat,NH 92,Daboha More,3-0,03-May,5,5,10,20,2,4,9,15
+165,Nagaland,Kohima,South PS,NH/29,Nst Garage New Reserve Junction,184,184.5,10,5,5,20,2,0,0,2
+166,Nagaland,Kohima,South PS,NH/29,City Church-IOC,182-5,183,17,9,14,40,0,0,1,1
+167,Nagaland,Kohima,South PS,NH/29,"New Reserve Junction, Revival Church",184.5,185,5,6,7,18,1,1,0,2
+168,Nagaland,Kohima,North PS,NH/2,Kezieke To Tinpati,1,1.5,5,5,5,15,1,1,1,3
+169,Nagaland,Kohima,South PS,NH/29,Tcp Gate-City Church,182,182.5,16,11,9,36,0,0,0,0
+170,Nagaland,Kohima,South PS,NH/29,IOC-Old NST,183,183-5,6,7,5,18,0,0,0,0
+171,Nagaland,Kohima,South PS,NH/29,OLD INT NST garage,183.5,184,8,8,5,21,0,0,0,0
+172,Nagaland,Kohima,Sechü Zubza PS,NH/29,Orphanage To Ar Camp,177.5,178,2,4,5,11,0,0,0,0
+173,Nagaland,Kiphire,Kiphire PS,NH-202,Kiphire Town,220,220.5,1,3,1,5,0,0,0,0
+174,Nagaland,Kohima,Sechü Zubza PS,NH/29,Lalmati To Peducha Village,164,164.5,6,5,4,15,0,0,0,0
+175,Rajasthan,Jaipur Gramin,Chaikankan,8,Padasoli,339.75,339.95,13,14,9,36,7,15,4,26
+176,Rajasthan,Jaipur Gramin,Chaikankan,8,Moukhampura,312.3,312.65,15,11,13,39,7,10,7,24
+177,Rajasthan,Jaipur Gramin,Chaikankan,8,Mahlan,301.1,301.45,10,14,13,37,8,7,8,23
+178,Rajasthan,Ajmer,Vyawar Sadar,8,Kharwa Chouraha,1,1,13,11,11,35,7,9,6,22
+179,Rajasthan,Rajsamand,Bhim,8,Nandawat,1.5,2,9,15,12,36,7,12,2,21
+180,Rajasthan,Jaipur Purva,Kanota,NH-11,Mali Ki Kothi Bagrana,369 Km,369.10 Km,21,13,14,48,8,6,6,20
+181,Rajasthan,Udaypur,Kherwad,8,Khandi Obari,345-60,346-10,6,7,3,16,6,11,3,20
+182,Rajasthan,Jaipur Gramin,Bendakuramp,8,Belpur,0,500 Meter,5,12,4,21,5,12,2,19
+183,Rajasthan,Bharatpur,Rupwas,NH 123,Bokoli,1,1,5,3,11,19,5,3,11,19
+184,Rajasthan,Bundi,Taleda,U P 52,Bllop Pulia Ke Pas,0.5,1,12,3,7,22,2,1,16,19
+185,Tamil Nadu,Chennai City,"T1 Ambattur Traffic PS",NH 205,"C.T.H. Road Mannurpet, AMBT Tel Exchange",18,18.5,251,300,224,775,59,56,51,166
+186,Tamil Nadu,Chennai City,"T15 SRMC Traffic PS",NH 48,"Tambaram - Puzhal Bypass Road, Porur Toll Gate Near",17,17.5,173,119,131,423,30,30,37,97
+187,Tamil Nadu,Chennai City,"T12 Poonamallee Traffic PS",NH 44,"Bangalore-Chennai NH Rd, Nazarethpet junction",5,5.5,166,188,166,520,27,37,31,95
+188,Tamil Nadu,Cuddalore,Kadampuliyur PS,NH 45 C,Panikankuppam,30.4,30.9,113,86,86,285,16,11,14,41
+189,Tamil Nadu,Vellore,Ambur Taluk PS,NH 46,Minnur Jn,32,32.5,11,9,18,38,11,9,18,38
+190,Tamil Nadu,Kanchipuram,G1 Madhuranthagam,NH,Karunkuzhi,4,4.5,32,30,20,82,12,12,12,36
+191,Tamil Nadu,Chennai City,"T4 Maduravoyal Traffic PS",NH 45,P.H Road-Vembuli Amman Koil Junction,0.5,1,45,59,43,147,9,22,5,36
+192,Tamil Nadu,Vellore,Ambur Taluk PS,NH 46,Periyangkuppam Jn,35,35.5,11,11,13,35,11,11,13,35
+193,Tamil Nadu,Viluppuram,Olakkur PS,NH 45,Saram BDO office,114+750,115+250,27,27,24,78,10,15,6,31
+194,Tamil Nadu,Cuddalore,Annamalai nagar PS,NH 45A,Vallampadugai,116.1,116.6,41,46,32,119,12,11,8,31
+195,Uttarakhand,UKI,Dhrasu,NH 108,Nalupani,2,2.5,3,3,1,7,3,36,2,41
+196,Uttarakhand,UDN,ITI,NH 74,Permanandpur,152,152.5,7,5,2,14,10,6,2,18
+197,Uttarakhand,TWL,Chamba,NH 94,Kirgani,81,81.5,0,0,1,1,0,0,17,17
+198,Uttarakhand,UKI,Purola,NH 507,Rikhau Khadd,62,62.5,0,0,1,1,0,0,15,15
+199,Uttarakhand,UDN,Rudrapur,NH 74,Radha Swami Satsang,196,196.5,0,4,12,16,2,1,12,15
+200,Uttarakhand,UDN,Kicha,NH 74,Lalpur,208,208.5,1,3,8,12,5,1,8,14
+201,Uttarakhand,ALM,bhatroujkhan,NH 14,Kholyadhar,85,85.24,0,0,1,1,0,0,14,14
+202,Uttarakhand,UDN,ITI,NH 74,Goutami Hight,149,149.5,4,2,4,10,7,2,4,13
+203,Uttarakhand,NTL,Rannagar,NH 121,Kasba Pirumdara,235,235.3,7,6,4,17,2,7,4,13
+204,Uttarakhand,UKI,Maneri,NH 109,Helkugad,60,60.2,0,1,0,1,0,12,0,12
+205,Delhi,North West,"SP Badli, Swaroop Nagar",NH-1,Libas Pur Bus Stand,16.2,15.7,16,10,18,44,10,3,9,22
+206,Delhi,North West,"Mahendra Park & SP Badli",NH-1,Mukarba Chowk,14.2,13.7,24,18,16,58,5,6,7,18
+207,Delhi,North West,Alipur,NH-1,Shani Mandir,22.2,21.7,17,9,3,29,10,8,0,18
+208,Delhi,North West,Adarsh Nagar,NH-1,Azad Pur Chowk,10.1,9.6,15,19,8,42,2,9,5,16
+209,Delhi,West,Punjabi Bagh,NH-10,Punjabi Bagh Chowk,8.7,8.2,18,12,20,50,6,5,5,16
+210,Delhi,North West,"SP Badli, Swaroop Nagar",NH-1,Siraspur,17.5,17,9,13,11,33,2,8,6,16
+211,Delhi,South,"Vasant Kunj South and North",NH-8,Mahipalpur Flyover,18.3,17.8,19,18,12,49,2,6,7,15
+212,Delhi,West,Punjabi Bagh,NH-10,Metro Station Madipur,12.1,11.6,12,21,15,48,4,6,5,15
+213,Delhi,North West,Alipur,NH-1,Sindhu Border,29,28.5,7,8,8,23,2,5,8,15
+214,Delhi,West,Mianwali Nagar,NH-10,Peera Garhi Chowk,14.7,14.2,17,14,20,51,3,5,6,14
+215,West Bengal,Hooghly Rural,Singur,NH-2,Ratanpur Bridge,632.07,632.42,14,4,4,22,11,2,4,17
+216,West Bengal,Howrah Rural,Uluberia,NH-6,Birshibpur,54.46,54.7,7,4,3,14,7,7,3,17
+217,West Bengal,Paschim Medinipur,Kharagpur (Local),NH-6,Basantapur,117.25,117.5,5,7,5,17,3,9,5,17
+218,West Bengal,Uttar Dinajpur,Islampur,NH-31,Ramganj,516.8,517,4,10,2,16,4,11,2,17
+219,West Bengal,Asansol-Durgapur PC,Kanksa,NH-2,Rajbandh,508.37,508.6,4,14,7,25,2,11,3,16
+220,West Bengal,Birbhum,Md. Bazar,NH-60,Seharakuri Bus Stand,349.1,349.3,6,8,4,18,7,7,2,16
+221,West Bengal,Asansol-Durgapur PC,Kanksa,NH-2,Birudiha Bus Stand,512.95,513,6,9,2,17,6,5,4,15
+222,West Bengal,Howrah PC,Liluah,NH-6,Chamrial Petrol Pump,20.2,20.5,7,8,4,19,4,7,4,15
+223,West Bengal,Howrah Rural,Domjur,NH-6,Nibra,26.1,26.5,7,8,7,22,5,5,5,15
+224,West Bengal,Howrah Rural,Sankrail,NH-6,Alampur,31.5,31.65,9,6,2,17,9,4,2,15
+225,Assam,City Guwahati,Gorchuk,NH-37,"Garchuk to NP School, Lalunggaon",0,0.5,59,65,69,193,32,35,37,104
+226,Assam,City Guwahati,Gorchuk,NH-37,Boragaon To Garchuk,0,0.5,59,55,49,163,28,27,26,81
+227,Assam,City Guwahati,Sonapur,NH-37,Patarkuchi To Naziraghat,0,0.5,49,50,34,133,18,22,22,62
+228,Assam,City Guwahati,Jalukbari OP,NH-37,Padumbori To Tetelia,0,0.5,40,40,46,126,15,18,21,54
+229,Assam,City Guwahati,Sonapur,NH-37,Baligate To Kapalkata To Samata,0,0.5,59,56,42,157,30,26,20,76
+230,Assam,City Guwahati,Basistha,NH-37,Beharbari Chariali To Lalmati,0,0.5,70,67,49,186,22,25,17,64
+231,Assam,City Guwahati,Azara,NH-37,Azara PHC to Dharapur Petrol Pump,0,0.5,39,40,39,118,7,9,15,31
+232,Assam,City Guwahati,Jorabat,NH-37,8Th Mile To 9Th Mile,0,0.5,31,31,24,86,7,10,11,28
+233,Assam,City Guwahati,Basistha,NH-37,"Basistha Chariali (Gurdwara Cutting) to Kinara",0,0.5,42,43,44,129,12,12,11,35
+234,Odisha,Cuttack,Tangi PS,NH- 16,Manguli Chhak To Hanuman Petrol Pump,31.8,32.3,3,7,4,14,4,9,5,18
+235,Odisha,Jajpur,Dharmasala,NH- 16,Near Naulapur,63.5,64,7,8,8,23,7,5,5,17
+236,Odisha,Jagatsinghpur,Paradip PS,NH- 53,Dochhaki Paradip,72.95,73.45,5,1,2,8,6,9,1,16
+237,Odisha,Mayurabhanj,Bangriposi,NH-49,Dwarasuni Temple to Dwarsuni Ghati,230,230.5,8,4,5,17,9,4,2,15
+238,Odisha,Mayurabhanj,Kuliana,NH-18,Kuchei Topower Grid Chaak,23.5,24,8,4,5,17,9,4,2,15
+239,Odisha,Jajpur,Badachana PS,NH- 16,Bandala Chhak,51.3,51.8,9,12,6,27,5,3,7,15
+240,Odisha,Upd Bhubaneaswar,Khandgiri,NH-16,Iginia Chhak,410.25,410.75,6,6,12,24,5,6,4,15
+241,Odisha,Sambalpur,Dhanupali PS,NH-53,Near Bhatra,562,562.5,7,21,8,36,2,8,5,15
+242,Odisha,Bhadrak,Bhadrak Rural,NH- 16,Trisalpur Chhak (Rahanja),125.1,125.6,9,5,14,28,4,3,7,14
+243,Odisha,Khordha,Sahid Nagar PS,NH- 16,Jaydev Vihar,417.75,418.25,7,7,12,26,3,6,5,14
+244,Bihar,Naugachia,Naugachia,NH 31,Near Zero Mile,0,0.5,14,12,0,26,22,19,0,41
+245,Bihar,Gaya,Magadh Medical,NH 83,Cant Area,98,98.4,6,0,10,16,8,0,15,23
+246,Bihar,Gaya,Barachatti,NH 02,Kahubag,1036.7,1037.3,4,7,1,12,8,8,6,22
+247,Bihar,Gaya,Sherghati,NH 02,Gopalpur,1010.8,1011.2,6,2,3,11,11,7,3,21
+248,Bihar,Naugachia,Naugachia,NH 31,Near Bus Stand,0,0.5,12,0,0,12,18,0,0,18
+249,Bihar,Gaya,Dobhi,NH 83,Bajaura,121.8,122.2,7,1,0,8,16,1,0,17
+250,Bihar,Muzaffarpur,Ahiapur,NH 77,Bhikhanpura,0,0.5,5,4,2,11,10,4,2,16
+251,Bihar,Aurangabad,Madanpur,NH 02,Shivganj,974,974.7,6,3,5,14,8,1,6,15
+252,Bihar,Samastipur,Ujiyarpur,NH 28,Satanpur,581,581.6,11,0,4,15,10,0,5,15
+253,Bihar,Patna,,NH 30,"New Bypass Karmali Chak 70Feet To West 500 Mtr.",0,0.5,13,10,7,30,7,4,3,14
+254,Uttar Pradesh,Unnao,Ajgain,NH-25,Purva Mod,70,70.4,17,21,25,73,22,20,27,69
+255,Uttar Pradesh,Mirzapur,Kotwali Dehat,NH-7,Karanpur Pahadee,9,9.5,0,40,34,74,0,40,15,55
+256,Uttar Pradesh,Mirzapur,Kotwali Katra,NH-7,Sabari Tiraha,4,4.4,0,13,26,39,0,12,38,50
+257,Uttar Pradesh,Bulandshahr,PS-Sikandrabad,NH-91,GT Road Cut,16,16.3,12,14,10,36,16,15,18,49
+258,Uttar Pradesh,Bulandshahr,PS-Sikandrabad,NH-91,Sunehra T Point,15,15.4,9,8,9,26,14,13,15,42
+259,Uttar Pradesh,Bulandshahr,Kotwali Dehat,NH-91,Maman Chungi,4,4.5,10,11,6,27,13,15,7,35
+260,Uttar Pradesh,Unnao,Ajgain,NH-25,Navabganj,52,52.4,10,11,9,30,11,13,10,34
+261,Uttar Pradesh,Mujaffarnagr,Chhapar,NH-58,Rampur Tiraha Cut,129.2,129.7,5,6,9,20,9,12,12,33
+262,Uttar Pradesh,Muradabad,Gunnaur,NH-509,Kali Ma,159,159.2,8,8,13,29,11,9,12,32
+263,Uttar Pradesh,Sambhal,Gunnaur,NH-509,Kali Ma,159,159.2,8,8,13,29,11,9,12,32
+264,Punjab,Rupnagar,Sadar Rupnagar,NH 205,Malakpur T-Point,5,5.5,20,24,12,56,20,24,10,54
+265,Punjab,SAS Nagar,Zirakpur,NH- 05,Gurdwara Nabha Sahib Chd Road,4,4.5,17,12,8,37,17,16,13,46
+266,Punjab,Cop/ Ludhiana,PS Div No 7,NH-01,"Tajpur Cut Samrala Chowk Vardhman Chowk Grewal Petrol Pump",1,1,9,6,5,20,11,16,4,31
+267,Punjab,SAS Nagar,Zirakpur,NH-152,"T-Point Pind Singhpura Chd To Ambala Road",3,3.5,8,9,6,23,9,11,9,29
+268,Punjab,Ludhiana,Sahnewal,NH 44,Sahnewal Bridge,301.754,302.254,7,10,6,23,8,10,4,22
+269,Punjab,Pathankot,PS Shahpur Kandi,NH-01,Pangoli Chowk,500,1000,6,7,5,18,6,7,5,18
+270,Punjab,Ludhiana,Sahnewal,NH 44,Eastman Caste & Forge Ltd,304.402,304.902,7,5,2,14,10,5,2,17
+271,Punjab,Ludhiana,Sahnewal,NH 44,Dhandari Flyover,307.449,307.949,3,6,10,19,3,5,8,16
+272,Punjab,Ludhiana,Div No.3 + Jodhewal,NH 44,"Tibba Cut, Near Tajpur Chowk",315.442,315.942,8,7,3,18,6,7,3,16
+273,Punjab,Ludhiana,Sahnewal,NH 44,Dhandari Kalan Bus Stop,309.15,309.65,7,8,2,17,6,7,1,14
+274,Andaman and Nicobar Islands,South Andaman,Port Blair,NH-4,Aberdeen Bazaar,0.5,1.0,3,2,4,9,1,1,2,4
+275,Andaman and Nicobar Islands,South Andaman,Port Blair,NH-4,Dollygunj Junction,4.5,5.0,2,3,3,8,1,1,1,3
+276,Dadra and Nagar Haveli and Daman and Diu,Daman,Nani Daman,NH-8B,Varkund Junction,2.5,3.0,4,5,3,12,2,3,1,6
+277,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli,Silvassa,NH-848A,Athal Bridge,1.5,2.0,3,4,2,9,1,2,1,4
+278,Lakshadweep,Kavaratti,Kavaratti,Local Road,Jetty Area,0.1,0.5,1,1,0,2,0,1,0,1
+279,Puducherry,Puducherry,Puducherry Town,NH-45A,Indira Gandhi Square,0.5,1.0,7,8,6,21,3,2,2,7
+280,Puducherry,Karaikal,Karaikal Town,NH-45A,Karaikal Bridge,2.0,2.5,5,4,3,12,2,1,1,4
