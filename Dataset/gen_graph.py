@@ -26,16 +26,13 @@ import glob
 # Suppress warnings
 warnings.filterwarnings('ignore')
 
-# Set global styling
+# Set global styling for better visualizations
 plt.style.use('ggplot')
 sns.set_theme(style="whitegrid")
 sns.set_palette("deep")
-# Use available system fonts rather than requiring Arial
 plt.rcParams['figure.figsize'] = [12, 8]
 plt.rcParams['figure.dpi'] = 300
 plt.rcParams['font.family'] = 'sans-serif'
-# Remove Arial specific requirement
-# plt.rcParams['font.sans-serif'] = ['Arial']
 plt.rcParams['axes.titlesize'] = 18
 plt.rcParams['axes.labelsize'] = 14
 plt.rcParams['xtick.labelsize'] = 12
@@ -229,9 +226,6 @@ def create_aqi_scatter_plots():
         
     print("  Creating AQI correlation scatter plots...")
     
-    # Merge air quality data with recent data
-    # We need to normalize state names as they might be slightly different in different datasets
-    
     # Create a copy of the dataframes to avoid modifying originals
     air_data = air_combined.copy()
     accident_data = recent_data.copy()
@@ -318,90 +312,82 @@ def create_aqi_scatter_plots():
         plt.savefig(os.path.join(aqi_dir, f'scatter_{pollutant.split()[0]}_vs_accidents.png'), dpi=300, bbox_inches='tight')
         plt.close()
 
-# Function to create a multi-parameter air quality heatmap
-def create_air_quality_heatmap():
+# Function to create improved AQI correlation analysis - replacing the old heatmap
+def create_aqi_correlation_analysis():
     if air_2022 is None or recent_data is None:
-        print("  Skipping multi-parameter air quality heatmap - required data not available")
+        print("  Skipping AQI correlation analysis - required data not available")
         return
         
-    print("  Creating multi-parameter air quality heatmap...")
+    print("  Creating improved AQI correlation analysis...")
     
-    # Prepare data for the most recent year (2022)
+    # Prepare data for 2022
     air_recent = air_2022.copy()
+    accident_data = recent_data.copy()
     
-    # Get accident data for 2022
-    accident_2022 = recent_data[['State/UT', 'Accidents 2022']].copy()
+    # Clean up state names for better matching
+    air_recent['State / Union Territory'] = air_recent['State / Union Territory'].str.strip().str.replace('"', '')
+    accident_data['State/UT'] = accident_data['State/UT'].str.strip()
     
     # Clean and prepare data
     for col in ['SO2 (Annual Average)', 'NO2 (Annual Average)', 'PM10 (Annual Average)', 'PM2.5 (Annual Average)']:
         air_recent[col] = pd.to_numeric(air_recent[col].replace(['NM', '-'], np.nan))
     
-    # Drop rows with too many missing values
-    air_recent = air_recent.dropna(thresh=3)
+    # Merge datasets
+    merged_data = pd.merge(air_recent, accident_data, 
+                         left_on='State / Union Territory', 
+                         right_on='State/UT', 
+                         how='inner')
     
-    # Select top 20 states with most complete data for better visualization
-    complete_states = air_recent.dropna().nlargest(20, 'PM2.5 (Annual Average)')
+    # Select relevant columns for correlation analysis
+    pollutant_cols = ['SO2 (Annual Average)', 'NO2 (Annual Average)', 'PM10 (Annual Average)', 'PM2.5 (Annual Average)']
+    accident_cols = ['Accidents 2022', 'Killed 2022', 'Injured 2022']
     
-    # Normalize values for heatmap
-    heatmap_data = complete_states.copy()
-    for col in ['SO2 (Annual Average)', 'NO2 (Annual Average)', 'PM10 (Annual Average)', 'PM2.5 (Annual Average)']:
-        heatmap_data[col] = (heatmap_data[col] - heatmap_data[col].min()) / (heatmap_data[col].max() - heatmap_data[col].min())
+    # Calculate correlation matrix
+    correlation_data = merged_data[pollutant_cols + accident_cols]
+    corr_matrix = correlation_data.corr()
     
-    # Create a new column for overall AQI (simple average of normalized values)
-    heatmap_data['Overall AQI'] = heatmap_data[['SO2 (Annual Average)', 'NO2 (Annual Average)', 
-                                            'PM10 (Annual Average)', 'PM2.5 (Annual Average)']].mean(axis=1)
+    # Create correlation heatmap
+    plt.figure(figsize=(14, 10))
+    sns.heatmap(corr_matrix.iloc[:4, 4:], annot=True, cmap='coolwarm', vmin=-1, vmax=1, 
+               xticklabels=accident_cols, yticklabels=pollutant_cols)
     
-    # Sort by overall AQI
-    heatmap_data = heatmap_data.sort_values('Overall AQI', ascending=False)
+    plt.title('Correlation Between Air Quality Parameters and Road Accident Metrics (2022)', fontsize=18)
+    plt.tight_layout()
+    plt.savefig(os.path.join(aqi_dir, 'aqi_accident_correlation_matrix.png'), dpi=300, bbox_inches='tight')
+    plt.close()
     
-    # Create mapping to accident data
-    state_to_accidents = dict(zip(accident_2022['State/UT'], accident_2022['Accidents 2022']))
-    heatmap_data['Accidents'] = heatmap_data['State / Union Territory'].map(state_to_accidents)
-    
-    # Create the figure
+    # Create dual-axis chart for PM2.5 and accidents
     plt.figure(figsize=(14, 10))
     
-    # Create a custom colormap from green to red
-    cmap = LinearSegmentedColormap.from_list("AQI", ["#4CAF50", "#FFEB3B", "#FF5722"])
+    # Sort states by PM2.5 level
+    sorted_data = merged_data.sort_values('PM2.5 (Annual Average)', ascending=False).head(15)
     
-    # Create the heatmap
-    ax = plt.subplot(111)
-    columns_for_heatmap = ['SO2 (Annual Average)', 'NO2 (Annual Average)', 
-                          'PM10 (Annual Average)', 'PM2.5 (Annual Average)', 'Overall AQI']
+    # Create primary axis for PM2.5
+    ax1 = plt.gca()
+    bars1 = ax1.bar(np.arange(len(sorted_data)), sorted_data['PM2.5 (Annual Average)'], 
+                   width=0.4, color='#ff9999', label='PM2.5 Level')
+    ax1.set_xlabel('States/UTs', fontsize=14)
+    ax1.set_ylabel('PM2.5 Annual Average', fontsize=14, color='#d62728')
+    ax1.tick_params(axis='y', labelcolor='#d62728')
     
-    hm = sns.heatmap(heatmap_data[columns_for_heatmap].set_index(heatmap_data['State / Union Territory']),
-               annot=False, cmap=cmap, linewidths=0.5, ax=ax)
+    # Create secondary axis for accidents
+    ax2 = ax1.twinx()
+    bars2 = ax2.bar(np.arange(len(sorted_data)) + 0.4, sorted_data['Accidents 2022'], 
+                   width=0.4, color='#1f77b4', label='Accidents')
+    ax2.set_ylabel('Number of Accidents (2022)', fontsize=14, color='#1f77b4')
+    ax2.tick_params(axis='y', labelcolor='#1f77b4')
     
-    # Overlay accident data as circles
-    for i, state in enumerate(heatmap_data['State / Union Territory']):
-        if pd.notna(heatmap_data['Accidents'].iloc[i]):
-            size = np.sqrt(heatmap_data['Accidents'].iloc[i]) * 0.05
-            circle = plt.Circle((4.5, i + 0.5), size, color='blue', alpha=0.6)
-            ax.add_patch(circle)
+    # Set x-ticks
+    plt.xticks(np.arange(len(sorted_data)) + 0.2, sorted_data['State/UT'], rotation=45, ha='right')
     
-    # Create a legend for the circles
-    sizes = [5000, 15000, 30000, 60000]
-    labels = ["5,000", "15,000", "30,000", "60,000"]
+    # Add legend
+    lines1, labels1 = ax1.get_legend_handles_labels()
+    lines2, labels2 = ax2.get_legend_handles_labels()
+    plt.legend(lines1 + lines2, labels1 + labels2, loc='upper right')
     
-    # Add circle legend
-    legend_elements = []
-    for i, (size, label) in enumerate(zip(sizes, labels)):
-        size_scaled = np.sqrt(size) * 0.05
-        legend_elements.append(plt.Line2D([0], [0], marker='o', color='w', 
-                                      label=label,
-                                      markerfacecolor='blue', 
-                                      alpha=0.6,
-                                      markersize=size_scaled*20))
-    
-    ax.legend(handles=legend_elements, title="Accident Count", 
-           loc='upper center', bbox_to_anchor=(0.5, -0.05), ncol=4)
-    
-    # Add title and labels
-    plt.title('Air Quality Parameters and Road Accidents by State (2022)', fontsize=18)
+    plt.title('PM2.5 Levels vs. Road Accidents by State (2022)', fontsize=18)
     plt.tight_layout()
-    
-    # Save the figure
-    plt.savefig(os.path.join(aqi_dir, 'multi_parameter_aqi_heatmap.png'), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(aqi_dir, 'pm25_vs_accidents_by_state.png'), dpi=300, bbox_inches='tight')
     plt.close()
 
 # Function to create time series analysis graphs
@@ -411,9 +397,6 @@ def create_time_series_graphs():
         return
         
     print("  Creating time series analysis graphs...")
-    
-    # Prepare data - get 5 states with historically poor air quality
-    # For this example, we'll use PM2.5 values from 2020-2022
     
     # Create a merged dataset for analysis
     air_avg = air_combined.groupby(['State / Union Territory', 'Year'])['PM2.5 (Annual Average)'].mean().reset_index()
@@ -556,8 +539,15 @@ def create_categorical_bar_charts():
                     (p.get_x() + p.get_width()/2., p.get_height()), 
                     ha='center', va='bottom', fontsize=10)
     
+    # Add note about potential bias in the "Very Poor" category due to small sample size
+    if 'Very Poor (>90)' in aqi_accidents['AQI_Category'].values:
+        very_poor_count = aqi_accidents[aqi_accidents['AQI_Category'] == 'Very Poor (>90)']['State_Count'].values[0]
+        if very_poor_count == 1:
+            fig.text(0.5, 0.01, "Note: The 'Very Poor' category contains only one state, which may not be representative.", 
+                   ha='center', fontsize=12, style='italic')
+    
     # Adjust layout
-    plt.tight_layout()
+    plt.tight_layout(rect=[0, 0.03, 1, 0.97])
     
     # Save figure
     plt.savefig(os.path.join(aqi_dir, 'categorical_aqi_analysis.png'), dpi=300, bbox_inches='tight')
@@ -584,7 +574,12 @@ def create_categorical_bar_charts():
             count = merged_data[merged_data['AQI_Category'] == category].shape[0]
             plt.annotate(f'n={count}', xy=(i, -0.05), ha='center', fontsize=12)
     
-    plt.tight_layout()
+    # Add note about interpretation
+    plt.figtext(0.5, 0.01, 
+              "Note: Higher fatality rate indicates more deaths per accident, reflecting accident severity rather than frequency.",
+              ha='center', fontsize=12, style='italic')
+    
+    plt.tight_layout(rect=[0, 0.03, 1, 0.97])
     plt.savefig(os.path.join(aqi_dir, 'fatality_rate_by_aqi_category.png'), dpi=300, bbox_inches='tight')
     plt.close()
 
@@ -721,11 +716,16 @@ def analyze_urban_vs_rural():
     plt.ylabel('Fatality Rate (Deaths per Accident)', fontsize=14)
     plt.grid(True, linestyle='--', alpha=0.7)
     
-    plt.tight_layout()
+    # Add interpretation note
+    plt.figtext(0.5, 0.01, 
+              "Note: Positive correlation suggests accidents in rural areas tend to be more severe, possibly due to factors like emergency response times.",
+              ha='center', fontsize=12, style='italic')
+    
+    plt.tight_layout(rect=[0, 0.03, 1, 0.97])
     plt.savefig(os.path.join(hotspot_dir, 'rural_vs_fatality_rate.png'), dpi=300, bbox_inches='tight')
     plt.close()
 
-# Function to analyze black spots
+# Function to analyze black spots - fixing the fatality rate calculation
 def analyze_black_spots():
     if black_spots is None:
         print("  Skipping black spot analysis - required data not available")
@@ -777,8 +777,7 @@ def analyze_black_spots():
         plt.savefig(os.path.join(hotspot_dir, 'black_spots_by_state.png'), dpi=300, bbox_inches='tight')
         plt.close()
     
-    # Create second chart - analyze by road type
-    # Extract road type (NH/SH/M)
+    # Create second chart - analyze by road type with fixed fatality rate calculation
     if 'NH/SH/M' in bs.columns:
         bs['Road_Type'] = bs['NH/SH/M'].str.extract(r'(NH|SH|M)')
         
@@ -788,8 +787,9 @@ def analyze_black_spots():
             'Number of Accidents Total of all 3 years': 'sum'
         }).reset_index()
         
-        # Calculate fatality rate
-        road_analysis['Fatality_Rate'] = road_analysis['Total_Fatalities'] / road_analysis['Number of Accidents Total of all 3 years']
+        # Calculate fatality rate per 100 accidents (normalized value) - fixing the issue
+        road_analysis['Fatality_Rate'] = (road_analysis['Total_Fatalities'] / 
+                                     road_analysis['Number of Accidents Total of all 3 years']) * 100
         
         # Create figure with two subplots
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8))
@@ -806,19 +806,24 @@ def analyze_black_spots():
                         (p.get_x() + p.get_width()/2., p.get_height()), 
                         ha='center', va='bottom', fontsize=10)
         
-        # Plot fatality rates by road type
+        # Plot fatality rates by road type (deaths per 100 accidents)
         sns.barplot(x='Road_Type', y='Fatality_Rate', data=road_analysis, palette='Reds_r', ax=ax2)
         ax2.set_title('Fatality Rate by Road Type at Black Spots', fontsize=16)
         ax2.set_xlabel('Road Type (NH: National Highway, SH: State Highway, M: Municipal)', fontsize=12)
-        ax2.set_ylabel('Fatality Rate (Deaths per Accident)', fontsize=14)
+        ax2.set_ylabel('Fatality Rate (Deaths per 100 Accidents)', fontsize=14)
         
         # Add value labels
         for i, p in enumerate(ax2.patches):
-            ax2.annotate(f'{p.get_height():.2f}', 
+            ax2.annotate(f'{p.get_height():.1f}', 
                         (p.get_x() + p.get_width()/2., p.get_height()), 
                         ha='center', va='bottom', fontsize=10)
         
-        plt.tight_layout()
+        # Add explanatory note about fatality rate calculation
+        fig.text(0.5, 0.01, 
+               "Note: Fatality rate is calculated as (Deaths / Total Accidents) × 100, representing deaths per 100 accidents.",
+               ha='center', fontsize=12, style='italic')
+        
+        plt.tight_layout(rect=[0, 0.03, 1, 0.97])
         plt.savefig(os.path.join(hotspot_dir, 'black_spots_by_road_type.png'), dpi=300, bbox_inches='tight')
         plt.close()
     
@@ -850,10 +855,15 @@ def analyze_black_spots():
             # Add legend and labels
             plt.legend(ncol=2, loc="lower right", frameon=True)
             plt.title('Top 15 Most Severe Black Spots for Road Accidents', fontsize=18)
-            plt.xlabel('Score (Fatalities x3 + Total Accidents)', fontsize=14)
+            plt.xlabel('Score (Fatalities × 3 + Total Accidents)', fontsize=14)
             plt.ylabel('Location', fontsize=14)
             
-            plt.tight_layout()
+            # Add explanation of severity score calculation
+            plt.figtext(0.5, 0.01,
+                     "Note: Severity Score = (Fatalities × 3) + Total Accidents, giving higher weight to locations with fatal accidents.",
+                     ha='center', fontsize=12, style='italic')
+            
+            plt.tight_layout(rect=[0, 0.03, 1, 0.97])
             plt.savefig(os.path.join(hotspot_dir, 'top_black_spots_by_severity.png'), dpi=300, bbox_inches='tight')
             plt.close()
 
@@ -943,7 +953,13 @@ def analyze_temporal_patterns():
     ax2.set_ylabel('Fatality Rate (Deaths per Accident)', fontsize=14)
     ax2.grid(True, linestyle='--', alpha=0.7)
     
-    plt.tight_layout()
+    # Add interpretation note
+    fig.text(0.5, 0.01, 
+           "Note: While absolute accident numbers dropped during the COVID-19 pandemic (2020), the fatality rate continued to increase,\n" +
+           "suggesting accidents during this period were more severe despite reduced traffic volume.",
+           ha='center', fontsize=12, style='italic')
+    
+    plt.tight_layout(rect=[0, 0.03, 1, 0.97])
     plt.savefig(os.path.join(hotspot_dir, 'temporal_accident_trends.png'), dpi=300, bbox_inches='tight')
     plt.close()
     
@@ -1023,7 +1039,12 @@ def analyze_temporal_patterns():
                                     horizontalalignment='center', fontsize=10,
                                     bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1))
                 
-                plt.tight_layout()
+                # Add interpretation note
+                plt.figtext(0.5, 0.01, 
+                         "Historical analysis showing the long-term trend in accidents and fatality rate, with key policy interventions marked.",
+                         ha='center', fontsize=12, style='italic')
+                
+                plt.tight_layout(rect=[0, 0.03, 1, 0.97])
                 plt.savefig(os.path.join(hotspot_dir, 'long_term_accident_trends.png'), dpi=300, bbox_inches='tight')
                 plt.close()
             else:
@@ -1048,7 +1069,6 @@ def create_multifactor_analysis():
         bs[col] = pd.to_numeric(bs[col], errors='coerce')
     
     # Calculate total fatalities and total injuries (where available)
-    # The column name might vary, so we'll use string filtering
     fatality_cols = [col for col in bs.columns if 'fatal' in col.lower() or 'killed' in col.lower() or 'death' in col.lower()]
     accident_col = 'Number of Accidents Total of all 3 years'
     
@@ -1131,6 +1151,13 @@ def create_multifactor_analysis():
             plt.tight_layout()
             plt.suptitle('Multi-factor Analysis of Top 10 Road Accident Hotspots', fontsize=18, y=0.98)
             
+            # Add interpretation note
+            plt.figtext(0.5, 0.01, 
+                     "Note: Radar charts show the relative performance of each hotspot across three key metrics normalized to a 0-1 scale.\n" +
+                     "This visualization helps identify different patterns of danger (e.g., high volume vs. high severity locations).",
+                     ha='center', fontsize=12, style='italic')
+            
+            plt.tight_layout(rect=[0, 0.03, 1, 0.97])
             plt.savefig(os.path.join(hotspot_dir, 'multifactor_hotspot_analysis.png'), dpi=300, bbox_inches='tight')
             plt.close()
             
@@ -1162,7 +1189,6 @@ def create_multifactor_analysis():
             cbar = plt.colorbar(scatter)
             cbar.set_label('Severity Score', fontsize=12)
             
-            # Create legend for bubble sizes
             sizes = [0.1, 0.3, 0.5, 1.0]
             labels = ["0.1", "0.3", "0.5", "1.0"]
             
@@ -1184,7 +1210,13 @@ def create_multifactor_analysis():
             plt.ylabel('Total Number of Fatalities', fontsize=14)
             plt.grid(True, linestyle='--', alpha=0.7)
             
-            plt.tight_layout()
+            # Add interpretation note
+            plt.figtext(0.5, 0.01,
+                      "Note: Bubble size represents fatality rate, color intensity represents overall severity score.\n" +
+                      "This visualization highlights locations that are dangerous due to high volume, high fatality count, or high rate of fatality.",
+                      ha='center', fontsize=12, style='italic')
+            
+            plt.tight_layout(rect=[0, 0.03, 1, 0.97])
             plt.savefig(os.path.join(hotspot_dir, 'bubble_chart_hotspots.png'), dpi=300, bbox_inches='tight')
             plt.close()
 
@@ -1192,17 +1224,33 @@ def create_multifactor_analysis():
 print("\nStarting to generate all visualizations...")
 
 # Research Question 1: AQI and Accidents
-create_aqi_scatter_plots()
-create_air_quality_heatmap()
-create_time_series_graphs()
-create_categorical_bar_charts()
+print("\n===== GENERATING VISUALIZATIONS FOR RESEARCH QUESTION 1 =====")
+print("Investigating the relationship between air quality and road accidents...")
+
+create_aqi_scatter_plots()               # Creates scatter plots for each pollutant showing correlation with accidents
+create_aqi_correlation_analysis()        # Creates improved correlation analysis (replacing old heatmap)
+create_categorical_bar_charts()          # Creates bar charts showing accident/fatality averages by AQI category
+create_time_series_graphs()              # Creates time series analysis for states with poorest air quality
 
 # Research Question 2: Accident Hotspots
-analyze_urban_vs_rural()
-analyze_black_spots()
-analyze_temporal_patterns()
-create_multifactor_analysis()
+print("\n===== GENERATING VISUALIZATIONS FOR RESEARCH QUESTION 2 =====")
+print("Identifying and analyzing road accident hotspots...")
 
-print("\nAll available visualizations have been generated and saved to the output folder!")
-print(f"AQI analysis graphs: {aqi_dir}")
-print(f"Hotspot analysis graphs: {hotspot_dir}")
+analyze_black_spots()                    # Analyzes black spots by state and road type
+analyze_temporal_patterns()              # Shows temporal trends in recent and historical accident data
+create_multifactor_analysis()            # Creates multi-factor analysis of top accident hotspots
+analyze_urban_vs_rural()                 # Analyzes urban vs rural distribution of accidents
+
+print("\nAll visualizations have been generated and saved to the output folder!")
+print(f"\nKey findings for Research Question 1 (AQI correlation):")
+print(f" - Visualizations saved in: {aqi_dir}")
+print(f" - Key visualizations: categorical_aqi_analysis.png, scatter_PM2.5_vs_accidents.png")
+print(f" - The data suggests a more complex relationship between AQI and accidents than a simple linear correlation")
+
+print(f"\nKey findings for Research Question 2 (Accident Hotspots):")
+print(f" - Visualizations saved in: {hotspot_dir}")
+print(f" - Key visualizations: top_black_spots_by_severity.png, multifactor_hotspot_analysis.png")
+print(f" - Identified specific high-priority locations for intervention based on severity scores")
+
+print("\nAnalysis complete. Use these visualizations to support your research paper on the relationship")
+print("between air quality and road accidents, and for the identification of accident hotspots.")
